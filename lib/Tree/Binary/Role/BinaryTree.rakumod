@@ -147,9 +147,9 @@ role BinaryTree[
 ] is export does HasNodes does Iterable {
 
     #|The Type of node values (default to Any)
-    has ValueType $.value is required;
+    has ValueType() $.value is required;
     #| The child nodes
-    has Tree::Binary::Role::BinaryTree @!nodes[2];
+    has Tree::Binary::Role::BinaryTree @!nodes[2] is built;
 
 =begin pod
 
@@ -162,11 +162,6 @@ role BinaryTree[
        my Tree::Binary::Role::BinaryTree @ = @!nodes.grep({defined $_});
     }
 
-    submethod BUILD ( ValueType() :$value, :@nodes ) {
-        $!value = $value;
-        @!nodes = @nodes;
-    }
-    
     method iterator (Tree::Binary::Role::BinaryTree:D :) {
         return Tree::Binary::Iterator.new( 
             tree => self, 
