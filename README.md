@@ -1,4 +1,4 @@
-[![Actions Status](https://github.com/Scimon/raku-BTree/workflows/test/badge.svg)](https://github.com/Scimon/raku-BTree/actions)
+[![Actions Status](https://github.com/Scimon/raku-Tree-Binary/workflows/test/badge.svg)](https://github.com/Scimon/raku-Tree-Binary/actions)
 
 NAME
 ====
